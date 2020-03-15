@@ -4,15 +4,22 @@
 # 猜錯的話, 要告訴他 比答案大/小
 
 import random
+
 r = random.randint(1, 100)
+count = 0 # 猜的次數
+
 while True: # 重複去猜
+	count = count + 1 # count += 1 (簡潔法)
 	num = input('請輸入一個數字: ')
 	num = int(num)
 	if num == r: 
 		print('終於猜對了!')
+		print('這是你猜的第', count, '次')
 		break
-	else:
-		if num > r:
-			print('太大了!')
-		if num < r:
-			print('太小了!')
+	elif num > r:
+		print('太大了!')
+	elif num < r:
+		print('太小了!')
+	print('這是你猜的第', count, '次')
+
+
